@@ -1,0 +1,451 @@
+focus_tree = { 
+id = ireland_focus
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = IRE 
+} 
+} 
+#Focus for The End of the Civil War
+focus = { 
+id = IRE_theendofthecivilwar
+icon = GFX_goal_generic_demand_territory
+x = 10
+y = 7
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_secondirishcivilwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_war = no
+ } 
+completion_reward = { 
+add_manpower = -5000
+
+134 = { add_building_construction = { type = industrial_complex level=2 instant_build = yes} set_state_flag = IRErebuild } 
+
+add_ideas = SPA_recovering_from_civil_war
+ } 
+
+ } 
+
+#Focus for Build Fortifications
+focus = { 
+id = IRE_buildfortifications
+icon = GFX_goal_generic_fortify_city
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_prepareforwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_building_construction = { type = bunker province = 7377 level = 2 instant_build = yes  }
+add_building_construction = { type = bunker province = 3342 level = 2 instant_build = yes  }
+add_building_construction = { type = bunker province = 303 level = 2 instant_build = yes  }
+add_building_construction = { type = bunker province = 3359 level = 2 instant_build = yes  }
+ } 
+
+ } 
+
+#Focus for Ban the IRA
+focus = { 
+id = IRE_bantheira
+icon = GFX_goal_generic_political_pressure
+x = 9
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_theirishconstitution } 
+mutually_exclusive = { focus = IRE_legalizetheira } 
+mutually_exclusive = { focus = IRE_legalizetheira } 
+mutually_exclusive = { focus = IRE_legalizetheira } 
+mutually_exclusive = { focus = IRE_legalizetheira } 
+mutually_exclusive = { focus = IRE_legalizetheira } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity
+= { ideology = fascism popularity = 0.15 }
+add_political_power = 50
+add_stability = -.1
+ } 
+
+ } 
+
+#Focus for The Irish Constitution
+focus = { 
+id = IRE_theirishconstitution
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 7
+y = 1
+cost = 7
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability= 0.2
+add_political_power = 100
+add_war_support = -3
+ } 
+
+ } 
+
+#Focus for Legalize the IRA
+focus = { 
+id = IRE_legalizetheira
+icon = GFX_goal_generic_wolf_pack
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_theirishconstitution } 
+mutually_exclusive = { focus = IRE_bantheira } 
+ai_will_do = { 
+ factor = 10
+ } 
+completion_reward = { 
+add_popularity
+= { ideology = democratic popularity = 0.15 }
+add_political_power = -50
+add_stability = -0.5
+ } 
+
+ } 
+
+#Focus for Cut Ties with the United Kingdom
+focus = { 
+id = IRE_cuttieswiththeunitedkingdom
+icon = GFX_goal_tfv_sever_ties_with_uk
+x = 3
+y = 3
+cost = 8
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_legalizetheira } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+is_in_faction = no
+ } 
+completion_reward = { 
+create_faction = "free_irish_republic"
+add_state_core = 119
+ } 
+
+ } 
+
+#Focus for Ban the Blueshirts
+focus = { 
+id = IRE_bantheblueshirts
+icon = GFX_goal_poland_goal
+x = 7
+y = 3
+cost = 12
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_legalizetheira } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_political_power > 400
+ } 
+completion_reward = { 
+set_stability = .95
+add_political_power = -1400
+ } 
+
+ } 
+
+#Focus for Help the Blueshirts
+focus = { 
+id = IRE_helptheblueshirts
+icon = GFX_goal_generic_small_arms
+x = 9
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_beginpoliticalchange } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+country_event = {days = 1 id = irelandreborn.1 }
+add_popularity
+= { ideology = fascism popularity = 0.1 }
+ } 
+
+ } 
+
+#Focus for Begin Political Change
+focus = { 
+id = IRE_beginpoliticalchange
+icon = GFX_goal_generic_intelligence_exchange
+x = 9
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_bantheira } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 50
+add_popularity = {ideology = fascism popularity=.18 }
+ } 
+
+ } 
+
+#Focus for Closer Relations with the UK
+focus = { 
+id = IRE_closerrelationswiththeuk
+icon = GFX_goal_tfv_strengthen_commonwealth_ties
+x = 0
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_legalizetheira } 
+mutually_exclusive = { focus = IRE_cuttieswiththeunitedkingdom } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+is_in_faction = no
+ } 
+completion_reward = { 
+join_faction = allies
+ } 
+
+ } 
+
+#Focus for Rectify Trade Relations with the UK
+focus = { 
+id = IRE_rectifytraderelationswiththeuk
+icon = GFX_goal_generic_improve_relations
+x = 0
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_closerrelationswiththeuk } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_import = { resource = steel amount = 14 exporter = ENG }
+ } 
+
+ } 
+
+#Focus for Irish Farm Subsidies
+focus = { 
+id = IRE_irishfarmsubsidies
+icon = GFX_goal_generic_national_unity
+x = 14
+y = 1
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+134 = { add_manpower = 10000 }
+134 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } set_state_flag = IREbuilt }
+ } 
+
+ } 
+
+#Focus for Development Boards
+focus = { 
+id = IRE_developmentboards
+icon = GFX_goal_generic_production2
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_irishfarmsubsidies } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_resource = {type = steel amount = 6 state = 135 }
+ } 
+
+ } 
+
+#Focus for Begin Preparations for Civil War
+focus = { 
+id = IRE_beginpreparationsforcivilwar
+icon = GFX_goal_generic_major_war
+x = 9
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_helptheblueshirts } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_government = fascism
+has_stability < 0.7
+ } 
+completion_reward = { 
+add_stability = -.1
+news_event = irelandreborn.2
+ } 
+
+ } 
+
+#Focus for Second Irish Civil War
+focus = { 
+id = IRE_secondirishcivilwar
+icon = GFX_goal_support_fascism
+x = 9
+y = 6
+cost = 11
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_beginpreparationsforcivilwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_war = no
+ } 
+completion_reward = { 
+declare_war_on = {target = RER type = annex_everything }
+
+hidden_effect = {
+
+RER = { add_state_core = 135 }
+RER = { add_state_core = 134 }
+
+RER = {set_state_controller = 135 }
+RER = {set_state_controller = 134 } 
+
+ENG = { country_event = { days =1 id = irelandreborn.3 } }
+	
+news_event = irelandreborn.4
+country_event = irelandreborn.5
+load_oob = RER_civil_war
+
+}
+ } 
+
+ } 
+
+#Focus for Remove Dissidents
+focus = { 
+id = IRE_removedissidents
+icon = GFX_focus_generic_self_management
+x = 8
+y = 7
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_secondirishcivilwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_war = no
+ } 
+completion_reward = { 
+add_manpower = -15278
+add_popularity= { ideology = democratic popularity = -1 }
+ } 
+
+ } 
+
+#Focus for International Relations
+focus = { 
+id = IRE_internationalrelations
+icon = GFX_goal_generic_attack_allies
+x = 9
+y = 8
+cost = 6
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_theendofthecivilwar } 
+prerequisite = { focus = IRE_removedissidents } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_idea = SPA_recovering_from_civil_war =no
+ } 
+completion_reward = { 
+add_political_power = 80
+ } 
+
+ } 
+
+#Focus for Prepare for War
+focus = { 
+id = IRE_prepareforwar
+icon = GFX_goal_generic_construction2
+x = 11
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_bantheira } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+army_experience = 15
+add_tech_bonus= { bonus = 0.5 uses = 2 category = infantry_weapons }
+ } 
+
+ } 
+
+#Focus for German Equipment
+focus = { 
+id = IRE_germanequipment
+icon = GFX_goal_generic_military_sphere
+x = 13
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_prepareforwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_government = fascism
+ } 
+completion_reward = { 
+GER = { send_equipment = {target = IRE type = infantry_equipment amount=1000 } }
+ } 
+
+ } 
+
+#Focus for The War is Over
+focus = { 
+id = IRE_thewarisover
+icon = GFX_goal_molotov_ribbentrop_pact
+x = 12
+y = 5
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = IRE_buildfortifications } 
+prerequisite = { focus = IRE_germanequipment } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_idea = SPA_recovering_from_civil_war
+ } 
+completion_reward = { 
+remove_ideas = SPA_recovering_from_civil_war
+add_political_power = 50
+set_stability = 76
+ } 
+
+ } 
+
+#End of focuses 
+ }
