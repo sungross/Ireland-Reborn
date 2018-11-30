@@ -1,0 +1,120 @@
+add_namespace = irelandreborn
+
+##Event: Blueshirts Organize
+news_event = {
+ id = irelandreborn.1
+ title = irelandreborn.1.title
+ desc = irelandreborn.1.desc
+ picture = GFX_news_event_ast_army
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = irelandreborn.1.a
+		ai_chance = { factor = 1}
+		load_oob = IRE_blueshirts
+	}
+}
+
+##Event: Irish Civil War Looms
+country_event = {
+ id = irelandreborn.2
+ title = irelandreborn.2.title
+ desc = irelandreborn.2.desc
+ picture = GFX_news_event_RCMP
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = irelandreborn.2.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Irish Civil War
+country_event = {
+ id = irelandreborn.3
+ title = irelandreborn.3.title
+ desc = irelandreborn.3.desc
+ picture = GFX_report_event_lithuania_army
+ is_triggered_only = yes
+ fire_only_once = yes
+	mean_time_to_happen = { days = 2}
+	option = {
+		name = irelandreborn.3.a
+		ai_chance = { factor = 1}
+		RER = {add_manpower=10000} 
+ENG = {add_manpower=-10000}
+	}
+	option = {
+		name = irelandreborn.3.b
+		ai_chance = { factor = 0}
+		IRE = { add_manpower = 10000 }
+ENg = { add_manpower = -10000 }
+	}
+	option = {
+		name = irelandreborn.3.c
+		ai_chance = { factor = 0}
+		create_wargoal
+= { type = annex_everything target = IRE }
+	}
+	option = {
+		name = irelandreborn.3.d
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Irish Civil War
+news_event = {
+ id = irelandreborn.4
+ title = irelandreborn.4.title
+ desc = irelandreborn.4.desc
+ picture = GFX_news_event_soldiers_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = irelandreborn.4.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Civil War
+country_event = {
+ id = irelandreborn.5
+ title = irelandreborn.5.title
+ desc = irelandreborn.5.desc
+ picture = GFX_report_event_saf_soldiers_2
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+ trigger = {
+country_exists = RER
+	}	mean_time_to_happen = { days = 1}
+	option = {
+		name = irelandreborn.5.a
+		ai_chance = { factor = 1}
+		declare_war_on = {target = RER type = annex_everything }
+	}
+}
+
+##Event: IRA Mobilizes
+country_event = {
+ id = irelandreborn.6
+ title = irelandreborn.6.title
+ desc = irelandreborn.6.desc
+ picture = GFX_news_event_soldiers_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = irelandreborn.6.a
+		ai_chance = { factor = 1}
+		load_oob = RER_civil_war
+	}
+}
+

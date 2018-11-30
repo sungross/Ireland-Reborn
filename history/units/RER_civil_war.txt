@@ -1,0 +1,71 @@
+division_template = {
+	name = "IRA Militia"			# IRA division
+
+	regiments = {
+		light_armor = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+units = {
+
+	division = {
+		name = "1st Munster Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "2nd Munster Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "3rd Munster Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "4th Munster Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "Republican Army"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "1st Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "2nd Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "3rd Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "4th Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "5th Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}
+	division = {
+		name = "6th Connaught Division"
+		location = 7394
+		division_template = "IRA Militia"
+	}

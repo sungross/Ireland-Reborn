@@ -1,0 +1,53 @@
+﻿division_template = {
+	name = "Blueshirt Division"			# Blueshirt Fascist Militia
+
+	regiments = {
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "1st Dublin Blueshirts"
+		location = 11293
+		division_template = "Blueshirt Division"
+	}
+	division = {
+		name = "2nd Dublin Blueshirts"
+		location = 11293
+		division_template = "Blueshirt Division"
+	}
+	division = {
+		name = "3rd Dublin Blueshirts"
+		location = 11293
+		division_template = "Blueshirt Division"
+	}
+	
+	division = {
+		name = "1st Connaught Blueshirts"
+		location = 337
+		division_template = "Blueshirt Division"
+	}
+	division = {
+		name = "2nd Connaught Blueshirts"
+		location = 337
+		division_template = "Blueshirt Division"
+	}
+	division = {
+		name = "3rd Connaught Blueshirts"
+		location = 337
+		division_template = "Blueshirt Division"
+	}
+	division = {
+		name = "4th Connaught Blueshirts"
+		location = 337
+		division_template = "Blueshirt Division"
+	}
+	
+	
